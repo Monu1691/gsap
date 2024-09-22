@@ -1,0 +1,36 @@
+// custom fonts
+
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/FuturaThin.ttf') format('truetype')
+}
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/FuturaStdBook.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/FuturaStdHeavy.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/FuturaBoldFont.ttf') format('truetype'), url('../fonts/FuturaBoldFont.ttf') format('alltype');
+}
+// @font-face {
+//     font-family: 'Futura';
+//     font-style: normal;
+//     font-weight: 800;
+//     font-display: swap;
+//     src: url('../fonts/FuturaBook.ttf') format('truetype');
+// }

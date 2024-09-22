@@ -1,0 +1,41 @@
+// keyframes
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-button {
+	background: #ccc;
+}
+::-webkit-scrollbar-track-piece {
+	background: #888;
+}
+::-webkit-scrollbar-thumb {
+	background: #eee;
+}
+
+@-webkit-keyframes fadeInUpCustom{
+	from {
+		opacity: 0;
+		@include transform(translateY(100px));
+	}
+	to {
+		opacity: 1;
+		@include transform(translateY(0));
+	}
+}
+
+@keyframes fadeInUpCustom{
+	from {
+		opacity: 0;
+		@include transform(translateY(100px));
+	}
+
+	to {
+		opacity: 0.8;
+		@include transform(translateY(0));
+	}
+}
+
+@keyframes zeroToFull {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
