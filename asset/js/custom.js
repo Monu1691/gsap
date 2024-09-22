@@ -26,11 +26,48 @@ jQuery(document).ready(function ($) {
             opacity: 0,
         });
 
+        // gs_timeline = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: '.banner__title span',  // जिस एलिमेंट पर ट्रिगर करना है
+        //         scroller: 'body',
+        //         markers: true,              // मार्कर्स दिखाने के लिए
+        //         start: "top 100%",           // एनिमेशन कब शुरू होनी चाहिए
+        //         end: "top 10%",
+        //         scrub: 2,            // एनिमेशन कब समाप्त होनी चाहिए
+        //         // toggleActions: "play none none none",  // जब भी ट्रिगर होगा, प्ले होगा
+        //     }
+        // });
+
         gs_timeline.from('.banner__title span', {
             x: 50,
             duration: 1,
             opacity: 0,
             stagger: 0.4,
+            // repeat: -1,
+            // yoyo: true,
+        });
+
+        gsap.from('.banner__title', {
+            scrollTrigger: {
+                trigger: '.banner__title',  // ट्रिगर करने के लिए एलिमेंट
+                scroller: 'body',
+                markers: true,   
+                start: "top 20%",        // कब शुरू होना चाहिए (टॉप से viewport का सेंटर)
+                end: "top -50%",       // कब समाप्त होना चाहिए
+                scrub: 2,
+                // onEnter: function() {       // जब यूजर सेक्शन में प्रवेश करे
+                //     gs_timeline.restart();  // एनिमेशन को फिर से शुरू करें
+                // },
+                onLeave: function() {       // जब यूजर सेक्शन से बाहर निकले
+                    gs_timeline.pause(0);   // एनिमेशन को रोकें और प्रारंभिक स्थिति पर सेट करें
+                },
+                onEnterBack: function() {   // जब यूजर वापस स्क्रॉल करे
+                    gs_timeline.restart();  // एनिमेशन को फिर से शुरू करें
+                },
+                // onLeaveBack: function() {   // जब यूजर सेक्शन को वापस छोड़कर बाहर जाए
+                //     gs_timeline.pause(0);   // एनिमेशन को रोकें और प्रारंभिक स्थिति पर सेट करें
+                // },
+            }
         });
     }
     gsapBanner();
